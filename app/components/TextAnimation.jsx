@@ -51,7 +51,7 @@ function TextAnimation() {
   useEffect(() => {
     wordFlick();
     
-  }, [wordFlick]); // Run once when the component mounts
+  }, []); // Run once when the component mounts
 
   return (
       <div id={styles.subhead}> A {part}</div>
@@ -107,7 +107,7 @@ function TextAnimation2() {
 
   useEffect(() => {
     wordFlick();
-  }, [wordFlick]); // Run once when the component mounts
+  }, []); // Run once when the component mounts
 
   return <div id={styles.subhead}>{part}</div>;
 }
