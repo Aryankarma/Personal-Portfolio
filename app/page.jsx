@@ -158,7 +158,7 @@ useEffect(()=>{
                     background-color: black;
                     transition:scale(1);
                     transition: 300ms; 
-                } 
+                }  
             `
             
             style.textContent = `
