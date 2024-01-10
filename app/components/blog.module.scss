@@ -1,0 +1,79 @@
+@mixin fakeoutline{
+    outline: 1px solid orange;
+}
+
+#blogBox{
+    display: flex;
+    justify-content: space-between;
+    color: #F1F5F9;
+    letter-spacing: 0.44px;
+
+    .headingsContainer{
+        width: 80%;
+    }
+    .mainheading{
+        font-size: 22px;
+        font-weight: 600;
+        line-height: 120%;
+        margin: .25rem 0;
+    }
+    .subheading, .date, .minuteRead{
+        margin: .5rem 0;
+        font-size: 15px;
+        font-weight: 200;
+        line-height: 150%;
+    }
+    
+    .DateAndTimeContainer{
+        align-Self: center;
+        text-align: right;
+    }
+    .minuteRead{
+        color: #F1F5F9;
+    }
+    .date{
+        color: #2E8BB1;
+    }
+}
+ 
+.hr{
+    margin-bottom: 50px;
+    margin-top: 0;
+    border: none;
+    border-bottom: 1px solid #2f2f2f;
+    box-shadow: 0px 3px 5px 0px rgb(0 0 0 / 25%);
+}
+
+#comingSoon{
+    color: #EEE;
+    text-align: center;
+    font-family: Libre Caslon Display;
+    font-size: 50px;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    padding-top: 50%;
+}
+
+/* Large smartphones and small tablets (iPad mini, Nexus 7, etc.) */
+@media only screen and (max-width : 768px){
+    .hr{
+        margin-bottom: 30px;
+        width: 300px
+    }
+    .mainheading{
+        font-size: 20px !important;
+    }
+    .subheading, .date, .minuteRead{
+        font-size: 14px !important;
+    }
+} 
+
+/* Small smartphones (iPhone 4, Galaxy S2, etc.) */
+@media only screen and (max-width : 475px){
+    .mainheading{
+        font-size: 18px !important;
+    }
+    .headingsContainer{
+        width: 75% !important;
+    }
+} 
