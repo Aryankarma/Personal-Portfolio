@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 // import '../App.css'
 import styles from './TextAnimation.module.scss'
+import Image from "next/image";
 
 const words = ['Web Developer', 'Web Designer', 'Tech Enthusiast'];
 
@@ -50,7 +51,7 @@ function TextAnimation() {
   useEffect(() => {
     wordFlick();
     
-  }, []); // Run once when the component mounts
+  }, [wordFlick]); // Run once when the component mounts
 
   return (
       <div id={styles.subhead}> A {part}</div>
@@ -106,7 +107,7 @@ function TextAnimation2() {
 
   useEffect(() => {
     wordFlick();
-  }, []); // Run once when the component mounts
+  }, [wordFlick]); // Run once when the component mounts
 
   return <div id={styles.subhead}>{part}</div>;
 }
