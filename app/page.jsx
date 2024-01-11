@@ -618,7 +618,7 @@ useEffect(()=>{
 
   </div>
 
-
+ 
   <div className="footer">
 
     <div className="socials">
