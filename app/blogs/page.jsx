@@ -11,8 +11,8 @@ const blogs = () => {
         {/* navbar */}
         <div className={styles.nav}>
             <div className={styles.pfpandback}>
-                <Link href="../"><Image className={styles.arrowimg} style={{ scale: "1", rotate:"180deg" }} src="/svg/backArrow.svg" alt="" /></Link>
-                <Image id={styles.pfp} src="/img/pfp.jpg" alt="profile picture" />
+                <Link href="../"><img className={styles.arrowimg} style={{ scale: "1", rotate:"180deg" }} src="/svg/backArrow.svg" alt="" /></Link>
+                <img id={styles.pfp} src="/img/pfp.jpg" alt="profile picture" />
             </div>
             <div className={styles.links}>
                 <a>All</a>
@@ -20,7 +20,7 @@ const blogs = () => {
                 <a>Technical</a>
                 <a>this&that</a>
             </div>
-            <Image id={styles.chand} src="/svg/moon.svg" alt="" />
+            <img id={styles.chand} src="/svg/moon.svg" alt="" />
         </div>
 
         {/* blogs */}

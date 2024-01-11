@@ -6,8 +6,6 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import React, {useState, useEffect} from 'react'
 import Link from "next/link"
-import Head from 'next/head'
-import Image from "next/image";
 
 function App() {
 
@@ -228,7 +226,7 @@ useEffect(()=>{
   {/* Home page */}
   <div id='homepage' className="page">
     <div className="nav">
-      <Image id="chand" src="/svg/moon.svg" alt="" />
+      <img id="chand" src="/svg/moon.svg" alt="" />
       {/* <i className="fa-solid fa-moon"></i> */}
       <button style={{display:"none"}}>
         <Link href={'./blogs'}>Blogs</Link>
@@ -244,7 +242,7 @@ useEffect(()=>{
       </div>
 
       <div id="profileContainer">
-        <Image src="/img/pfp.jpg" alt="profile picture" />
+        <img src="/img/pfp.jpg" alt="profile picture" />
       </div>
     </div>
     
@@ -285,63 +283,73 @@ useEffect(()=>{
         <div style={{borderColor:"#212D30"}} className="skillcircle">
           <div className="tooltip">
             <div className="tooltipcorner"></div>
-            Aryan has a strong command on react with 1+ years practice on DSA solutions.
+            ReactJS
+            {/* Aryan has a strong command on react with 1+ years practice on DSA solutions. */}
           </div>
-          <Image style={{width:"45px", height:"45px",}}  src="/img/react.png" alt="" /></div>
+          <img style={{width:"45px", height:"45px",}}  src="/img/react.png" alt="" /></div>
         <div style={{borderColor:"#172027"}} className="skillcircle">
           <div className="tooltip">    
             <div className="tooltipcorner"></div>            
-            Aryan has a strong command on c++ with 1+ years practice on DSA solutions.
+            C++
+            {/* Aryan has a strong command on c++ with 1+ years practice on DSA solutions. */}
           </div>
-          <Image style={{width:"40px", height:"45px",}} src="/img/c++.png" alt="" /></div>
+          <img style={{width:"40px", height:"45px",}} src="/img/c++.png" alt="" /></div>
         <div style={{borderColor:"#222820"}} className="skillcircle">
           <div className="tooltip">    
             <div className="tooltipcorner"></div>            
-            Aryan has a strong command on nodejs with 1+ years practice on DSA solutions.
+            NodeJS
+            {/* Aryan has a strong command on nodejs with 1+ years practice on DSA solutions. */}
           </div>
-          <Image style={{width:"45px", height:"45px", }} src="/img/nodejs.png" alt="" /></div>
+          <img style={{width:"45px", height:"45px", }} src="/img/nodejs.png" alt="" /></div>
         <div style={{borderColor:"#313131"}} className="skillcircle">
           <div className="tooltip">    
             <div className="tooltipcorner"></div>            
-            Aryan has a strong command on expressjs with 1+ years practice on DSA solutions.
+            ExpressJS
+            {/* Aryan has a strong command on expressjs with 1+ years practice on DSA solutions. */}
           </div>
-          <Image style={{width:"45px", height:"45px", }} src="/img/expressjs.png" alt="" /></div>
+          <img style={{width:"45px", height:"45px", }} src="/img/expressjs.png" alt="" /></div>
         <div style={{borderColor:"#313131"}} className="skillcircle">
           <div className="tooltip">    
             <div className="tooltipcorner"></div>            
-            Aryan has a strong command on nextjs with 1+ years practice on DSA solutions.
+            NextJS
+            {/* Aryan has a strong command on nextjs with 1+ years practice on DSA solutions. */}
           </div>
-          <Image style={{width:"45px", height:"45px", }} src="/img/nextjs.png" alt="" /></div>
+          <img style={{width:"45px", height:"45px", }} src="/img/nextjs.png" alt="" /></div>
         <div style={{borderColor:"#252E43"}} className="skillcircle">
           <div className="tooltip">    
             <div className="tooltipcorner"></div>            
-            Aryan has a strong command on htmlcss with 1+ years practice on DSA solutions.
+            HTML/CSS
+            {/* Aryan has a strong command on htmlcss with 1+ years practice on DSA solutions. */}
           </div>
-          <Image style={{width:"45px", height:"35px", }} src="/img/htmlcss.jpg" alt="" /></div>
+          <img style={{width:"45px", height:"35px", }} src="/img/htmlcss.jpg" alt="" /></div>
         <div style={{borderColor:"#352B30"}} className="skillcircle">
           <div className="tooltip">    
             <div className="tooltipcorner"></div>            
-            Aryan has a strong command on sass with 1+ years practice on DSA solutions.
+            SASS
+            {/* Aryan has a strong command on sass with 1+ years practice on DSA solutions. */}
           </div>
-          <Image style={{width:"45px", height:"30px", scale:".9"}} src="/img/sass.jpg" alt="" /></div>
+          <img style={{width:"45px", height:"30px", scale:".9"}} src="/img/sass.jpg" alt="" /></div>
         <div style={{borderColor:"#3B2C2B"}} className="skillcircle">
           <div className="tooltip">    
             <div className="tooltipcorner"></div>            
-            Aryan has a strong command on figma with 1+ years practice on DSA solutions.
+            Figma
+            {/* Aryan has a strong command on figma with 1+ years practice on DSA solutions. */}
           </div>
-          <Image style={{width:"28.5px", height:"42.5px", padding:"0 7.5px", scale:".9"}}  src="/img/figma.jpg" alt="" /></div>
+          <img style={{width:"28.5px", height:"42.5px", padding:"0 7.5px", scale:".9"}}  src="/img/figma.jpg" alt="" /></div>
         <div style={{borderColor:"#3A3627"}} className="skillcircle">
           <div className="tooltip">    
             <div className="tooltipcorner"></div>            
-            Aryan has a strong command on javascript with 1+ years practice on DSA solutions.
+            JavaScript
+            {/* Aryan has a strong command on javascript with 1+ years practice on DSA solutions. */}
           </div>
-          <Image style={{width:"40px", height:"45px", padding:"0px 5px",  scale:".9"}}  src="/img/javascript.jpg" alt="" /></div>
+          <img style={{width:"40px", height:"45px", padding:"0px 5px",  scale:".9"}}  src="/img/javascript.jpg" alt="" /></div>
         <div style={{borderColor:"#21392B"}} className="skillcircle">
           <div className="tooltip">    
             <div className="tooltipcorner"></div>            
-            Aryan has a strong command on mongodb with 1+ years practice on DSA solutions.
+            MongoDB
+            {/* Aryan has a strong command on mongodb with 1+ years practice on DSA solutions. */}
           </div>
-          <Image style={{width:"45px", height:"45px"}}  src="/img/mongodb.png" alt="" /></div>
+          <img style={{width:"45px", height:"45px"}}  src="/img/mongodb.png" alt="" /></div>
       </div>
     </div>
 
@@ -364,7 +372,7 @@ useEffect(()=>{
       <div className="projectBox projectBox1">
           
           <div className="laptop">
-            <Image src="/img/weather-app.png" alt="" />
+            <img src="/img/weather-app.png" alt="" />
           </div>
 
           <div className="projectAbout">
@@ -383,13 +391,13 @@ useEffect(()=>{
               <a href="https://weather-app-aryankarma.vercel.app/" target="_blank">
                 <button href="">
                   <p> Checkout
-                    <Image className='arrowimg' style={{ scale: "2.1", marginLeft: ".3rem" }} src="/svg/Arrow1.svg" alt="" />
+                    <img className='arrowimg' style={{ scale: "2.1", marginLeft: ".3rem" }} src="/svg/Arrow1.svg" alt="" />
                   </p>
                 </button>
               </a>
               <a href="https://github.com/aryankarma/weatherapp" target="_blank">
                 <button className='github' href="">
-                    <Image className='githubimg' style={{height:"15px"}} src="/svg/github.svg" alt="" />
+                    <img className='githubimg' style={{height:"15px"}} src="/svg/github.svg" alt="" />
                 </button>
               </a>
             </div>
@@ -401,7 +409,7 @@ useEffect(()=>{
         <div className="projectBox projectBox2">
           
           <div className="laptop">
-            <Image src="/img/bookswap.png" alt="" />
+            <img src="/img/bookswap.png" alt="" />
           </div>
           
           <div className="projectAbout">
@@ -418,13 +426,13 @@ useEffect(()=>{
               <a href="" target="_blank">
                 <button href="">
                   <p> Checkout
-                    <Image className='arrowimg' style={{ scale: "2.1", marginLeft: ".3rem"  }} src="/svg/Arrow1.svg" alt="" />
+                    <img className='arrowimg' style={{ scale: "2.1", marginLeft: ".3rem"  }} src="/svg/Arrow1.svg" alt="" />
                   </p>
                 </button>
               </a>
               <a href="https://github.com/aryankarma/bookswap" target="_blank">
                 <button className='github' href="">
-                    <Image className='githubimg' style={{height:"15px"}} src="/svg/github.svg" alt="" />
+                    <img className='githubimg' style={{height:"15px"}} src="/svg/github.svg" alt="" />
                 </button>
               </a>
             </div>
@@ -436,7 +444,7 @@ useEffect(()=>{
         <div className="projectBox projectBox3">
           
           <div className="laptop">
-            <Image src="/img/your-wellness.png" alt="" />
+            <img src="/img/your-wellness.png" alt="" />
           </div>
 
           <div className="projectAbout">
@@ -453,13 +461,13 @@ useEffect(()=>{
               <a href="https://aryankarma.github.io/Your-wellness/" target="_blank">
                 <button href="">
                   <p> Checkout
-                    <Image className='arrowimg' style={{scale: "2.1", marginLeft: ".3rem"}} src="/svg/Arrow1.svg" alt="" />
+                    <img className='arrowimg' style={{scale: "2.1", marginLeft: ".3rem"}} src="/svg/Arrow1.svg" alt="" />
                   </p>
                 </button>
               </a>
               <a href="https://github.com/aryankarma/Your-wellness" target="_blank">
                 <button className='github' href="">
-                    <Image className='githubimg' style={{height:"15px"}} src="/svg/github.svg" alt="" />
+                    <img className='githubimg' style={{height:"15px"}} src="/svg/github.svg" alt="" />
                 </button>
               </a>
             </div>
@@ -477,7 +485,7 @@ useEffect(()=>{
         <div className="projectBox projectBox1">
           
           <div className="laptop">
-            <Image src="/img/weather-app.png" alt="" />
+            <img src="/img/weather-app.png" alt="" />
           </div>
 
           <div className="projectAbout">
@@ -496,13 +504,13 @@ useEffect(()=>{
               <a href="https://weather-app-aryankarma.vercel.app/" target="_blank">
                 <button href="">
                   <p> Checkout
-                    <Image className='arrowimg' style={{ scale: "2", marginLeft: ".3rem" }} src="/svg/Arrow1.svg" alt="" />
+                    <img className='arrowimg' style={{ scale: "2", marginLeft: ".3rem" }} src="/svg/Arrow1.svg" alt="" />
                   </p>
                 </button>
               </a>
               <a href="https://github.com/aryankarma/weatherapp" target="_blank">
                 <button className='github' href="">
-                    <Image className='githubimg' style={{height:"10px"}} src="/svg/github.svg" alt="" />
+                    <img className='githubimg' style={{height:"10px"}} src="/svg/github.svg" alt="" />
                 </button>
               </a>
             </div>
@@ -514,7 +522,7 @@ useEffect(()=>{
         <div className="projectBox projectBox2">
           
           <div className="laptop">
-            <Image src="/img/bookswap.png" alt="" />
+            <img src="/img/bookswap.png" alt="" />
           </div>
           
           <div className="projectAbout">
@@ -531,13 +539,13 @@ useEffect(()=>{
               <a href="" target="_blank">
                 <button href="">
                   <p> Checkout
-                    <Image className='arrowimg' style={{ scale: "2", marginLeft: ".3rem" }} src="/svg/Arrow1.svg" alt="" />
+                    <img className='arrowimg' style={{ scale: "2", marginLeft: ".3rem" }} src="/svg/Arrow1.svg" alt="" />
                   </p>
                 </button>
               </a>
               <a href="https://github.com/aryankarma/bookswap" target="_blank">
                 <button className='github' href="">
-                    <Image className='githubimg' style={{height:"10px"}} src="/svg/github.svg" alt="" />
+                    <img className='githubimg' style={{height:"10px"}} src="/svg/github.svg" alt="" />
                 </button>
               </a>
             </div>
@@ -549,7 +557,7 @@ useEffect(()=>{
         <div className="projectBox projectBox3">
           
           <div className="laptop">
-            <Image src="/img/your-wellness.png" alt="" />
+            <img src="/img/your-wellness.png" alt="" />
           </div>
 
           <div className="projectAbout">
@@ -557,8 +565,8 @@ useEffect(()=>{
               <h5 style={{ margin: "0", marginLeft: "-5%" }}>Your-wellness</h5>
             </div>
             <div className="projectFeatures">
-              <ul style={{ paddingLeft: "10%" }}>
-                <li>HTML, CSS, JavaScript, jQuery</li>
+              <ul style={{ paddingLeft: "10%", listStyle: "disc" }}>
+                <li>HTML, CSS, JS, jQuery</li>
                 <li>Responsive layout</li>
               </ul>
             </div>
@@ -566,13 +574,13 @@ useEffect(()=>{
               <a href="https://aryankarma.github.io/Your-wellness/" target="_blank">
                 <button href="">
                   <p> Checkout
-                    <Image className='arrowimg' style={{ scale: "2", marginLeft: ".3rem" }} src="/svg/Arrow1.svg" alt="" />
+                    <img className='arrowimg' style={{ scale: "2", marginLeft: ".3rem" }} src="/svg/Arrow1.svg" alt="" />
                   </p>
                 </button>
               </a>
               <a href="https://github.com/aryankarma/Your-wellness" target="_blank">
                 <button className='github' href="">
-                    <Image className='githubimg' style={{height:"10px"}} src="/svg/github.svg" alt="" />
+                    <img className='githubimg' style={{height:"10px"}} src="/svg/github.svg" alt="" />
                 </button>
               </a>
             </div>
@@ -605,7 +613,7 @@ useEffect(()=>{
       <input autoComplete='off' type="text" name="name" id="inputname"  placeholder='Name' required/>
       <input autoComplete='off' type="email" name="email" id="inputemail" placeholder='Email' required/>
       <textarea autoComplete='off' type="text" name="message" id="inputtextarea" rows="5" placeholder='Message' required></textarea>
-      <button type="submit">SEND <Image className='arrowimg' style={{ scale: "1.5", marginLeft: ".3rem" }} src="/svg/sendarrow.svg" alt="" /> </button>
+      <button type="submit">SEND <img className='arrowimg' style={{ scale: "1.5", marginLeft: ".3rem" }} src="/svg/sendarrow.svg" alt="" /> </button>
     </form>
 
   </div>
@@ -614,13 +622,13 @@ useEffect(()=>{
   <div className="footer">
 
     <div className="socials">
-      <a href='https://www.x.com/karmaaryan' target="_blank">Twitter <Image className='arrowimg' src="/svg/Arrow2.svg" alt="" /></a>
-      <a href='https://www.github.com/aryankarma' target="_blank">Github <Image className='arrowimg' src="/svg/Arrow2.svg" alt="" /></a>
-      <a href='https://www.linkedin.com/in/aryankarma' target="_blank">Linkedin <Image className='arrowimg' src="/svg/Arrow2.svg" alt="" /></a>
-      <a href='https://www.bento.me/aryankarma' target="_blank">Bento<Image className='arrowimg' src="/svg/Arrow2.svg" alt="" /></a>
+      <a href='https://www.x.com/karmaaryan' target="_blank">Twitter <img className='arrowimg' src="/svg/Arrow2.svg" alt="" /></a>
+      <a href='https://www.github.com/aryankarma' target="_blank">Github <img className='arrowimg' src="/svg/Arrow2.svg" alt="" /></a>
+      <a href='https://www.linkedin.com/in/aryankarma' target="_blank">Linkedin <img className='arrowimg' src="/svg/Arrow2.svg" alt="" /></a>
+      {/* <a href='https://www.bento.me/aryankarma' target="_blank">Bento<img className='arrowimg' src="/svg/Arrow2.svg" alt="" /></a> */}
     </div>
     <div className="email">
-      <a href="mailto:aryankarma29@gmail.com" target='_blank' >aryankarma29@gmail.com <Image className='arrowimg' src="/svg/Arrow2.svg" alt="" /></a>
+      <a href="mailto:aryankarma29@gmail.com" target='_blank' >aryankarma29@gmail.com <img className='arrowimg' src="/svg/Arrow2.svg" alt="" /></a>
     </div>
   </div>
 

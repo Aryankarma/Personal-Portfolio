@@ -12,7 +12,7 @@
   }
 
   /* temporary */
-  .tooltip, #chand{
+  #chand{
     display: none !important;
   }
 
@@ -232,6 +232,10 @@
     visibility: hidden;
     opacity: 0;
     transition: 250ms ease-in-out;
+
+    /* after udpating sentences */
+    top: -90%;
+    width: 150%;
   }
   .tooltipcorner{
     position: absolute;
@@ -722,8 +726,12 @@
     }
     .socials{
       gap: .6rem;
+      margin-left: .75rem;
     }
-  
+    .email{
+      margin-right: .75rem;
+    }
+    
   
     /* fix after side progress bar */
     .pagecontainer{
