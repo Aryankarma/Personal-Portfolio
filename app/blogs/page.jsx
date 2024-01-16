@@ -7,6 +7,7 @@ import Image from "next/image";
 
 const blogs = () => {
     return <>
+
     <div className={styles.container}>
         {/* navbar */}
         <div className={styles.nav}>
@@ -29,8 +30,8 @@ const blogs = () => {
         </div>
     </div>
 
-
     </>
+
 }
 
 export default blogs;

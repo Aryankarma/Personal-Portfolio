@@ -444,28 +444,29 @@ useEffect(()=>{
         <div className="projectBox projectBox3">
           
           <div className="laptop">
-            <img src="/img/your-wellness.png" alt="" />
+            <img src="/img/UniHosp.png" alt="" />
           </div>
 
           <div className="projectAbout">
             <div className="projectHeading">
-              <h5 style={{ margin: "0", marginLeft: "-2%" }}>Your-wellness</h5>
+              <h5 style={{ margin: "0", marginLeft: "-2%" }}>UniHosp</h5>
             </div>
             <div className="projectFeatures">
               <ul style={{ paddingLeft: "7%", listStyle: "disc" }}>
-                <li>HTML, CSS, JavaScript, jQuery</li>
+              <li>Full Stack Hackathon Project</li>
+                <li>HTML, CSS, JS, SASS</li>
                 <li>Responsive layout</li>
               </ul>
             </div>
             <div className="checkoutbtn">
-              <a href="https://aryankarma.github.io/Your-wellness/" target="_blank">
+              <a href="https://github.com/glxymesh/UniHosp" target="_blank">
                 <button href="">
                   <p> Checkout
                     <img className='arrowimg' style={{scale: "2.1", marginLeft: ".3rem"}} src="/svg/Arrow1.svg" alt="" />
                   </p>
                 </button>
               </a>
-              <a href="https://github.com/aryankarma/Your-wellness" target="_blank">
+              <a href="https://github.com/glxymesh/UniHosp" target="_blank">
                 <button className='github' href="">
                     <img className='githubimg' style={{height:"15px"}} src="/svg/github.svg" alt="" />
                 </button>
@@ -557,28 +558,29 @@ useEffect(()=>{
         <div className="projectBox projectBox3">
           
           <div className="laptop">
-            <img src="/img/your-wellness.png" alt="" />
+            <img src="/img/UniHosp.png" alt="" />
           </div>
 
           <div className="projectAbout">
             <div className="projectHeading">
-              <h5 style={{ margin: "0", marginLeft: "-5%" }}>Your-wellness</h5>
+              <h5 style={{ margin: "0", marginLeft: "-5%" }}>UniHosp</h5>
             </div>
             <div className="projectFeatures">
               <ul style={{ paddingLeft: "10%", listStyle: "disc" }}>
-                <li>HTML, CSS, JS, jQuery</li>
+                <li>Full Stack Hackathon Project</li>
+                <li>HTML, CSS, JS, SASS</li>
                 <li>Responsive layout</li>
               </ul>
             </div>
             <div className="checkoutbtn">
-              <a href="https://aryankarma.github.io/Your-wellness/" target="_blank">
+              <a href="/" target="_blank">
                 <button href="">
                   <p> Checkout
                     <img className='arrowimg' style={{ scale: "2", marginLeft: ".3rem" }} src="/svg/Arrow1.svg" alt="" />
                   </p>
                 </button>
               </a>
-              <a href="https://github.com/aryankarma/Your-wellness" target="_blank">
+              <a href="https://github.com/glxymesh/unihosp" target="_blank">
                 <button className='github' href="">
                     <img className='githubimg' style={{height:"10px"}} src="/svg/github.svg" alt="" />
                 </button>
@@ -616,7 +618,7 @@ useEffect(()=>{
       <button type="submit">SEND <img className='arrowimg' style={{ scale: "1.5", marginLeft: ".3rem" }} src="/svg/sendarrow.svg" alt="" /> </button>
     </form>
 
-  </div>
+  </div> 
 
  
   <div className="footer">
@@ -625,7 +627,7 @@ useEffect(()=>{
       <a href='https://www.x.com/karmaaryan' target="_blank">Twitter <img className='arrowimg' src="/svg/Arrow2.svg" alt="" /></a>
       <a href='https://www.github.com/aryankarma' target="_blank">Github <img className='arrowimg' src="/svg/Arrow2.svg" alt="" /></a>
       <a href='https://www.linkedin.com/in/aryankarma' target="_blank">Linkedin <img className='arrowimg' src="/svg/Arrow2.svg" alt="" /></a>
-      {/* <a href='https://www.bento.me/aryankarma' target="_blank">Bento<img className='arrowimg' src="/svg/Arrow2.svg" alt="" /></a> */}
+      <a id='removeMobile' href='https://www.bento.me/aryankarma' target="_blank">Bento<img className='arrowimg' src="/svg/Arrow2.svg" alt="" /></a>
     </div>
     <div className="email">
       <a href="mailto:aryankarma29@gmail.com" target='_blank' >aryankarma29@gmail.com <img className='arrowimg' src="/svg/Arrow2.svg" alt="" /></a>

@@ -289,9 +289,12 @@
   textarea{
     border: .5px solid white;
     border-radius: 10px;
-    padding-top: .25rem;
-    resize:none;
+    text-indent: 0;
+    resize: none;
+    padding: 0.25rem 0.5rem;
+    box-sizing: border-box;
   }
+
   .footer{
     width: 97%;
     margin: auto;
@@ -348,7 +351,8 @@
     background: radial-gradient(193.2% 96.59% at 3.41% 16.91%, rgba(45, 32, 26, 1) 14.58%, rgba(95, 69, 60,1) 85.7%);
   }    
   .projectBox3{
-    background: radial-gradient(200.03% 100% at 0% 18.01%, rgba(17, 45, 34, 1) 10.8%, rgba(49, 117, 87, 1) 85.54%);  
+    /* background: radial-gradient(200.03% 100% at 0% 18.01%, rgba(17, 45, 34, 1) 10.8%, rgba(49, 117, 87, 1) 85.54%);   */
+    background: radial-gradient(200.03% 100% at 0% 18.01%, rgba(21, 67, 49, 0.75) 10.8%, rgba(47, 186, 124, 0.75) 91.54%);
   }
   .projectBox1::before,.projectBox2::before,.projectBox3::before{
     position: absolute;
