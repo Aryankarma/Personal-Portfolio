@@ -64,6 +64,32 @@ useEffect(()=>{
 
 }, [])
 
+
+  useEffect(()=>{
+    function handleHover() {
+      let hoverTimer;
+    
+      function handleMouseEnter() {
+        hoverTimer = setTimeout(() => {
+          console.log('Hovered for over 3 seconds!');
+          hoverElement.innerHTML = "Killed"
+        }, 3000);
+      }
+    
+      function handleMouseLeave() {
+        clearTimeout(hoverTimer);
+      }
+    
+      const hoverElement = document.querySelector("#skillsheading");
+    
+      hoverElement.addEventListener('mouseenter', handleMouseEnter);
+      hoverElement.addEventListener('mouseleave', handleMouseLeave);
+    }
+    
+    handleHover();
+  })
+
+
 // Side progress bar script
 useEffect(()=>{
   const handleScroll = () =>{
@@ -218,7 +244,6 @@ useEffect(()=>{
 
 }, [])
 
-
   return <>
 
 <div id='fixpadding' className="pagecontainer">
@@ -276,7 +301,7 @@ useEffect(()=>{
 
   {/* skills page */}
   <div id='skillspage' className="page">
-    <div className="head">Skills<span id="headdotlightblue">.</span></div>
+    <div id='skillsheading' className="head">Skills<span id="headdotlightblue">.</span></div>
 
     <div className="contentBox">
       <div id="skillscircle">
@@ -366,7 +391,7 @@ useEffect(()=>{
 
     <div className="head">Projects<span id="headdotpurple">.</span></div>
     
-    <div style={{background:"none", boxShadow:'none'}} className="contentBox" id='removeMobile'>
+    <div style={{background:"none", boxShadow:'none'}} className="contentBox" id=''>
       <Slider {...settings}>
       
       <div className="projectBox projectBox1">
@@ -477,121 +502,6 @@ useEffect(()=>{
         </div>  
 
       </Slider>
-    </div>
-
-    <div style={{background:"none", boxShadow:'none'}} className="contentBox">
-      <div style={{scale:"1.05",marginTop: "1.5rem"}} id='projectBoxContainer' className='removeDesktop' >
-
-
-        <div className="projectBox projectBox1">
-          
-          <div className="laptop">
-            <img src="/img/weather-app.png" alt="" />
-          </div>
-
-          <div className="projectAbout">
-            <div className="projectHeading">
-              <h5 style={{ margin: "0", marginLeft: "-5%" }}>Weather App</h5>
-            </div>
-            <div className="projectFeatures">
-              <ul style={{ paddingLeft: "10%", listStyle: "disc" }}>
-                <li>Tech: React & Next</li>
-                <li>Elegant UI/UX</li>
-                <li>load time: 950ms </li>
-                <li>refresh time: 300ms</li>
-              </ul>
-            </div>
-            <div className="checkoutbtn">
-              <a href="https://weather-app-aryankarma.vercel.app/" target="_blank">
-                <button href="">
-                  <p> Checkout
-                    <img className='arrowimg' style={{ scale: "2", marginLeft: ".3rem" }} src="/svg/Arrow1.svg" alt="" />
-                  </p>
-                </button>
-              </a>
-              <a href="https://github.com/aryankarma/weatherapp" target="_blank">
-                <button className='github' href="">
-                    <img className='githubimg' style={{height:"10px"}} src="/svg/github.svg" alt="" />
-                </button>
-              </a>
-            </div>
-          </div>
-
-        </div>
-
-
-        <div className="projectBox projectBox2">
-          
-          <div className="laptop">
-            <img src="/img/bookswap.png" alt="" />
-          </div>
-          
-          <div className="projectAbout">
-            <div className="projectHeading">
-              <h5 style={{ margin: "0", marginLeft: "-5%" }}>BookSwap</h5>
-            </div>
-            <div className="projectFeatures">
-              <ul style={{ paddingLeft: "10%", listStyle: "disc" }}>
-                <li>HTML, CSS, and JavaScript</li>
-                <li>Responsive design</li>
-              </ul>
-            </div>
-            <div className="checkoutbtn">
-              <a href="" target="_blank">
-                <button href="">
-                  <p> Checkout
-                    <img className='arrowimg' style={{ scale: "2", marginLeft: ".3rem" }} src="/svg/Arrow1.svg" alt="" />
-                  </p>
-                </button>
-              </a>
-              <a href="https://github.com/aryankarma/bookswap" target="_blank">
-                <button className='github' href="">
-                    <img className='githubimg' style={{height:"10px"}} src="/svg/github.svg" alt="" />
-                </button>
-              </a>
-            </div>
-          </div>
-
-        </div>
-
-
-        <div className="projectBox projectBox3">
-          
-          <div className="laptop">
-            <img src="/img/UniHosp.png" alt="" />
-          </div>
-
-          <div className="projectAbout">
-            <div className="projectHeading">
-              <h5 style={{ margin: "0", marginLeft: "-5%" }}>UniHosp</h5>
-            </div>
-            <div className="projectFeatures">
-              <ul style={{ paddingLeft: "10%", listStyle: "disc" }}>
-                <li>Full Stack Hackathon Project</li>
-                <li>HTML, CSS, JS, SASS</li>
-                <li>Responsive layout</li>
-              </ul>
-            </div>
-            <div className="checkoutbtn">
-              <a href="/" target="_blank">
-                <button href="">
-                  <p> Checkout
-                    <img className='arrowimg' style={{ scale: "2", marginLeft: ".3rem" }} src="/svg/Arrow1.svg" alt="" />
-                  </p>
-                </button>
-              </a>
-              <a href="https://github.com/glxymesh/unihosp" target="_blank">
-                <button className='github' href="">
-                    <img className='githubimg' style={{height:"10px"}} src="/svg/github.svg" alt="" />
-                </button>
-              </a>
-            </div>
-          </div>
-
-        </div>  
-
-
-      </div>
     </div>
 
 

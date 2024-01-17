@@ -4,10 +4,39 @@ import React, { useState, useEffect } from "react";
 import styles from './TextAnimation.module.scss'
 import Image from "next/image";
 
-const words = ['Web Developer', 'Web Designer', 'Tech Enthusiast'];
+let words = ['Web Developer', 'Web Designer', 'Tech Enthusiast'];
 
 
 function TextAnimation() {
+
+  
+
+  // useEffect(()=>{
+  //   function handleHover() {
+  //     let hoverTimer;
+    
+  //     function handleMouseEnter() {
+  //       hoverTimer = setTimeout(() => {
+  //         console.log('Hovered for over 3 seconds!');
+  //         words = ["Serial Killer"]
+  //         wordFlick();
+  //       }, 3000);
+  //     }
+    
+  //     function handleMouseLeave() {
+  //       clearTimeout(hoverTimer);
+  //     }
+    
+  //     const hoverElement = document.querySelector(".whoami");
+    
+  //     hoverElement.addEventListener('mouseenter', handleMouseEnter);
+  //     hoverElement.addEventListener('mouseleave', handleMouseLeave);
+  //   }
+    
+  //   handleHover();
+  // })
+
+
   const [part, setPart] = useState('');
   let i = 0;
   let offset = 0;
@@ -50,11 +79,10 @@ function TextAnimation() {
 
   useEffect(() => {
     wordFlick();
-    
-  }, []); // Run once when the component mounts
+  }, []);
 
   return (
-      <div id={styles.subhead}> A {part}</div>
+      <div id={styles.subhead} className="whoami"> A {part}</div>
   );
 }
 

@@ -700,6 +700,19 @@
     .projectFeatures{
       font-size: 10px;
     }
+
+    .slick-slide, .slide-active, .slick-current{
+      width: 88vw !important;
+      scale: 1.1;
+      transform: translate(72px, 10px);
+    }
+    .slick-arrow{
+      display: none !important;
+    }
+    .slick-list{
+      height: 176px;
+    }
+
     .checkoutbtn{
       margin: .5rem 0 0 0;
     }
