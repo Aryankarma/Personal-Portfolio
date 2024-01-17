@@ -72,7 +72,7 @@ useEffect(()=>{
       function handleMouseEnter() {
         hoverTimer = setTimeout(() => {
           console.log('Hovered for over 3 seconds!');
-          hoverElement.innerHTML = "Killed"
+          hoverElement.innerHTML = "Killed."
         }, 3000);
       }
     
