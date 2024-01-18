@@ -573,7 +573,7 @@ useEffect(()=>{
               </ul>
             </div>
             <div className="checkoutbtn">
-              <a href="/" target="_blank">
+              <a href="https://github.com/glxymesh/unihosp" target="_blank">
                 <button href="">
                   <p> Checkout
                     <img className='arrowimg' style={{ scale: "2", marginLeft: ".3rem" }} src="/svg/Arrow1.svg" alt="" />
