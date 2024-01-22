@@ -1,5 +1,25 @@
-$red: rgb(150,0,0);
-$darkblue: rgb(0,0,150);
+// Dark Mode colors
+$bgDark: #181818;
+$secondaryDark: #2E8BB1;
+$navTextDark: rgba(255, 255, 255, .6);
+$primaryTextDark: #F1F5F9;
+
+// Light Mode colors
+$secondaryLight: #FFA500;
+$bgLight: #F4F6F0;
+$navTextLight: rgba(0, 0, 0, .6);
+$primaryTextLight: #000000;
+
+// @mixin theme($mode){
+//     @if ($mode == light){
+//         background-color: $bgLight;
+//         color: $primaryTextLight;
+//     }@else{
+//         background-color: $bgDark;
+//         color: $primaryTextDark;    
+//     }
+// }
+
 @mixin fakeOutline{
     outline: 1px solid $red;
 }
@@ -15,15 +35,34 @@ $darkblue: rgb(0,0,150);
 @mixin transition{
     transition: 300ms ease-in-out;
 }
+@mixin transitionfast{
+    transition: 200ms ease-in-out;
+}
 @mixin transitionslow{
     transition: 500ms ease-in-out;
 }
 
+
 .container{
-    width: 98vw;
     @include flexCenter;
     justify-content: initial;
     flex-direction: column;
+    width: 100vw;
+    overflow-x: hidden;
+    height: 100vh;
+    @include transitionfast;
+}
+
+.container::-webkit-scrollbar {
+  width: 6px;
+}
+.container::-webkit-scrollbar-track {
+    background: #181818 !important;   
+}
+.container::-webkit-scrollbar-thumb {
+    display: inherit !important;
+    background-color: #252525 !important;
+    border-radius: 20px;
 }
 .nav{
     width: 100vw;
@@ -31,9 +70,20 @@ $darkblue: rgb(0,0,150);
     position: sticky;
     top: 0;
     padding-top: 30px;
-    background-color: #181818;
+    // @include theme(dark);
+    @include transitionfast;
+}
+
+.navDark{
+    background-color: $bgDark;
     box-shadow: 0px 15px 40px 0px #18181890;
 }
+.navLight{
+    background-color: $bgLight;
+    box-shadow: 0px 15px 40px 0px #F4F6F090;
+
+}
+
 .links{
     padding: 0;
     @include flexCenter;
@@ -46,7 +96,6 @@ $darkblue: rgb(0,0,150);
     a{
         cursor:default;
         list-style-type: none;
-        color: rgba(255,255,255,.6);
         font-weight: 300;
         margin: 0 .25rem;
         padding: .25rem 2.25rem .35rem;    
@@ -57,9 +106,9 @@ $darkblue: rgb(0,0,150);
             background-color: #202020;
         }&:active{
             // after fucntionality
-            color: #F1F5F9;
+            color: $primaryTextDark;
             font-weight: 500;
-            border-bottom: 4px solid #2E8BB1;
+            border-bottom: 4px solid $secondaryDark;
         }
     }
 }
@@ -69,8 +118,9 @@ $darkblue: rgb(0,0,150);
     margin-right: 30px;
     cursor: pointer;
     padding: 0 19px;
+    fill: $secondaryDark;
     &:hover{
-        filter: drop-shadow(0px 0px 10px #eee);
+        filter: drop-shadow(0px 0px 10px $secondaryDark);
     }
 }
 .pfpandback{
@@ -82,7 +132,7 @@ $darkblue: rgb(0,0,150);
         border-radius: 100%;
     }
     .arrowimg{
-        width: 15px;
+        width: 15px !important;
     }
     a{
         @include flexCenter;
@@ -105,13 +155,62 @@ $darkblue: rgb(0,0,150);
     max-width: 60%;
     margin-top: 1.75rem;
 }
-.shadow{
-    position: relative;
-    bottom: 0;
-    height: 1px;
-    width: 100vw;
-    box-shadow: 0px 10px 30px 0px #181818;
+
+// .shadow{
+//     position: relative;
+//     bottom: 0;
+//     height: 1px;
+//     width: 100vw;
+//     box-shadow: 0px 10px 30px 0px #181818;
+// }
+
+
+// light and dark theme 
+
+.arrowimgDark{
+    fill: $primaryTextDark;
 }
+.arrowimgLight{
+    fill: $primaryTextLight;
+}
+
+.navLinksDark {
+    border-bottom: 1px solid #2F2F2F;
+    color: $navTextDark;
+    
+}
+.navLinksLight {
+    border-bottom: 1px solid #E0E0E0;
+    color: $navTextLight;
+    a{
+        &:hover{
+            background-color: #20202010;
+        }&:active{
+            color: $primaryTextLight;
+            border-bottom: 4px solid $secondaryLight;
+        }
+    }
+}
+.containerDark{
+    background-color: $bgDark;
+}
+.containerLight{
+    background-color: $bgLight;
+}
+.containerLight::-webkit-scrollbar-track {
+    background: $bgLight !important;      
+}
+.containerLight::-webkit-scrollbar-thumb {
+    background-color: #24242440 !important;
+}
+.chandLight{
+    fill: $secondaryLight !important;
+    &:hover{
+        filter: drop-shadow(0px 0px 10px $secondaryLight) !important;
+    }
+}
+
+
 
 /* Large smartphones and small tablets (iPad mini, Nexus 7, etc.) */
 @media only screen and (max-width : 768px){

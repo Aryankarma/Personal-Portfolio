@@ -6,7 +6,7 @@
 }
 ::selection{
   background-color: black;
-  color: inherit;
+  color: white;
 }
 
 ::-moz-selection {
