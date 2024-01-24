@@ -24,6 +24,10 @@ $primaryTextLight: #000000;
 //     }
 // }
 
+.removeDesktop{
+    visibility: hidden;
+}
+
 #blogBox{
     display: flex;
     justify-content: space-between;
@@ -117,6 +121,9 @@ $primaryTextLight: #000000;
 
 /* Small smartphones (iPhone 4, Galaxy S2, etc.) */
 @media only screen and (max-width : 475px){
+    .removeDesktop{
+        visibility: visible;
+    }    
     .mainheading{
         font-size: 18px !important;
     }
