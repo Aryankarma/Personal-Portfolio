@@ -6,8 +6,7 @@ import Image from "next/image";
 
 const words = ['Web Developer', 'Web Designer', 'Tech Enthusiast'];
 
-
-function TextAnimation() {
+function TextAnimation({theme}) {
   const [part, setPart] = useState('');
   let i = 0;
   let offset = 0;
@@ -54,7 +53,7 @@ function TextAnimation() {
   }, []); // Run once when the component mounts
 
   return (
-      <div id={styles.subhead}> A {part}</div>
+      <div id={styles.subhead} className={`${theme == "Dark" ? styles.subheadDark : styles.subheadLight}`}> A {part}</div>
   );
 }
 
@@ -62,52 +61,52 @@ function TextAnimation() {
 export default TextAnimation;
 
 
-function TextAnimation2() {
-  const [part, setPart] = useState("");
-  let i = 0;
-  let offset = 0;
-  let forwards = true;
-  let skipCount = 0;
-  const skipDelay = 15;
+// function TextAnimation2() {
+//   const [part, setPart] = useState("");
+//   let i = 0;
+//   let offset = 0;
+//   let forwards = true;
+//   let skipCount = 0;
+//   const skipDelay = 15;
 
-  const wordFlick = () => {
-    const animate = () => {
-      if (forwards) {
-        if (offset >= words[i].length) {
-          ++skipCount;
-          if (skipCount === skipDelay) {
-            forwards = false;
-            skipCount = 0;
-          }
-        }
-      } else {
-        if (offset === 0) {
-          forwards = true;
-          i++;
-          offset = 0;
-          if (i >= words.length) {
-            i = 0;
-          }
-        }
-      }
-      const currentPart = words[i].substr(0, offset);
-      if (skipCount === 0) {
-        if (forwards) {
-          offset++;
-        } else {
-          offset--;
-        }
-      }
-      setPart(currentPart);
-      requestAnimationFrame(animate);
-    };
+//   const wordFlick = () => {
+//     const animate = () => {
+//       if (forwards) {
+//         if (offset >= words[i].length) {
+//           ++skipCount;
+//           if (skipCount === skipDelay) {
+//             forwards = false;
+//             skipCount = 0;
+//           }
+//         }
+//       } else {
+//         if (offset === 0) {
+//           forwards = true;
+//           i++;
+//           offset = 0;
+//           if (i >= words.length) {
+//             i = 0;
+//           }
+//         }
+//       }
+//       const currentPart = words[i].substr(0, offset);
+//       if (skipCount === 0) {
+//         if (forwards) {
+//           offset++;
+//         } else {
+//           offset--;
+//         }
+//       }
+//       setPart(currentPart);
+//       requestAnimationFrame(animate);
+//     };
 
-    animate();
-  };
+//     animate();
+//   };
 
-  useEffect(() => {
-    wordFlick();
-  }, []); // Run once when the component mounts
+//   useEffect(() => {
+//     wordFlick();
+//   }, []); // Run once when the component mounts
 
-  return <div id={styles.subhead}>{part}</div>;
-}
+//   return <div id={styles.subhead}>{part}</div>;
+// }

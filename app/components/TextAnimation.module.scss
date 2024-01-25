@@ -2,7 +2,13 @@
     cursor: default;
     font-family: 'Alegreya Sans SC', sans-serif;
     font-size: 20px;
-    -webkit-text-stroke: white .01rem;
-    color: #B7B7B7;
     letter-spacing: 1px;
+}
+.subheadDark{
+    -webkit-text-stroke: white 0.01rem;
+    color: #B7B7B7;
+}
+.subheadLight{
+    -webkit-text-stroke: black 0.03rem;
+    color: black;
 }

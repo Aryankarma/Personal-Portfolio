@@ -26,16 +26,17 @@ html{
 
 /* custom scroll bar */
 body::-webkit-scrollbar, textarea::-webkit-scrollbar {
-  width: 6px;
+  width: 0;
 }
 
 body::-webkit-scrollbar-track, textarea::-webkit-scrollbar-track {
   background: transparent;
+  visibility: hidden;
 }
 
 body::-webkit-scrollbar-thumb {
   display: none !important;
-  background-color: #333;
+  background-color: transparent;
   border-radius: 20px;
 }
 
