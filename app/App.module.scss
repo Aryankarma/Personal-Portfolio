@@ -22,6 +22,16 @@ $primaryTextLight: #333333;
     transition: 500ms ease-in-out;
 }
 
+
+.circlecursorlight{
+    box-shadow: 0 0 16px black;
+}
+.circlecursordark{
+    box-shadow: 0 0 16px white;
+}
+
+
+
 .lightPageContainer{
     background-color: $bgLight;
     @include transitionfast;
@@ -50,15 +60,18 @@ $primaryTextLight: #333333;
 }
 .headDark{
     color: #DDD;
+    text-shadow: 0 0 16px #181818;
 }
 .headLight{
     color: $primaryTextLight;
+    text-shadow: 0 0 16px #cccccc61;
+    z-index: 0 !important;
 }
 .headDotLight{
     color: $purpleColor !important;
 }
 .contentBoxDark{
-    background: rgba(255, 255, 255, 0.01);
+    background: rgba(27,27,27,.99);
     box-shadow: 0px 7px 7px 0px rgba(0, 0, 0, 0.40);
 }
 .contentBoxLight{
@@ -130,6 +143,8 @@ $primaryTextLight: #333333;
     color: white;
     &:focus{
         background-color: #333;
+        // for circlecursor
+        z-index: 2;
     }
 }
 .inputMsgDark{
@@ -137,6 +152,8 @@ $primaryTextLight: #333333;
     border: .5px solid white;
     &:focus{
         background-color: #333;
+        // for circlecursor
+        z-index: 2;
     }
 }
 .inputMailLight, .inputNameLight{
@@ -144,6 +161,8 @@ $primaryTextLight: #333333;
     border-bottom: .5px solid black;
     &:focus{
         background-color: $secondaryLight;
+        // for circlecursor
+        z-index: 2;
     }
 }
 .inputMsgLight{
@@ -151,6 +170,8 @@ $primaryTextLight: #333333;
     border: .5px solid black;
     &:focus{
         background-color: $secondaryLight;
+        // for circlecursor
+        z-index: 2;
     }
 }
 .buttonDark{

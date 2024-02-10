@@ -11,6 +11,24 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
+  
+  .circlecursor {
+    --circle-size: 40px;
+    --circle-size: 60px;
+    position: fixed;
+    height: var(--circle-size);
+    width: var(--circle-size);
+    border-radius: 100%;
+    top: calc(var(--circle-size) / 2 * -1);
+    left: calc(var(--circle-size) / 2 * -1);
+    pointer-events: none;
+    pointer-events: none;
+    backdrop-filter: invert(100%);
+      
+    z-index: 1;
+    backdrop-filter: invert(100%);
+  }
+
   /* font-family: 'DM Serif Display', serif; */
   
   h1,h2,h3,h4,h5,h6,p,span,.head,.tooltip{
@@ -51,9 +69,9 @@
     padding: 1.5rem;
     transition: 500ms ease-in-out;
     /* temporary */
-    /* position: fixed;
+    position: fixed;
     right: 0%;
-    z-index: 3; */
+    z-index: 3;
   }
   #chand:hover{
     transition: 500ms ease-in-out;
@@ -326,13 +344,13 @@
   }
   
   .projectBox1 {
-    background: radial-gradient(196.42% 98.22% at 0% 18.01%, #2B1148 8.72%, #630193 85.7%);
+    background: radial-gradient(196.42% 98.22% at 0% 18.01%, RGBA(43, 17, 72, 0.99) 8.72%, rgba(99, 1, 147, 0.99) 85.7%);
   }
   .projectBox2 {
-    background: radial-gradient(193.2% 96.59% at 3.41% 16.91%, #2F231E 14.58%, #553F37 85.7%);
+    background: radial-gradient(193.2% 96.59% at 3.41% 16.91%, rgba(47, 35, 30, 0.99) 14.58%, rgba(85, 63, 55, 0.99) 85.7%);
   }
   .projectBox3 {
-    background: radial-gradient(200.03% 100% at 0% 18.01%, #0F2A1B 10.8%, #266042 91.54%);
+    background: radial-gradient(200.03% 100% at 0% 18.01%, rgba(15, 42, 27, 0.99) 10.8%, rgba(38, 96, 66, 0.99) 91.54%);
   }
 
   .projectBox1::before,.projectBox2::before,.projectBox3::before{
@@ -598,6 +616,11 @@
   
   
   
+  
+  /* Z indexes */
+  .head, #imaryan, .contentBox{
+    z-index: 2 !important;
+  }
   
   
   
