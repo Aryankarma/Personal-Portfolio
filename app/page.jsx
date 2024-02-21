@@ -220,7 +220,7 @@ useEffect(()=>{
 
 // circle following the cursor
 useEffect(()=>{
-  console.clear();
+  // console.clear();
 
   const circleElement = document.querySelector('#circlecursor');
 

@@ -1,17 +1,43 @@
 "use client"
+import { initializeApp } from 'firebase/app';
+import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
+// Follow this pattern to import other Firebase services
+// import { } from 'firebase/<service>';
+import firebaseConfig from "../config/firebase"
+
 import styles from "./blogs.module.scss"
 import Blog from "../components/blog"
 import Link from "next/link"
 import Image from "next/image";
-import { useState } from "react"
+import { useState, useEffect } from "react"
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+// Get a list of cities from your database
+async function getData(db) {
+  const citiesCol = collection(db, 'blogTitle');
+  const citySnapshot = await getDocs(citiesCol);
+  const cityList = citySnapshot.docs.map(doc => doc.data());
+  return cityList;
+}
 
 const Blogs = () => { 
+    
+    const [maindata, setMainData] = useState([]) 
+
+    useEffect(()=>{
+        async function fetchData(){
+            const firebaseData = await getData(db);
+            setMainData(firebaseData.map((input)=> input));
+        }
+        fetchData();
+    }, [])
 
     const [theme, setTheme] = useState("Dark");
 
-    const changeTheme = () =>{
+    const changeTheme = () =>{ 
         setTheme(theme == "Dark" ? "Light" : "Dark")
-
     }
 
     return <>
@@ -47,9 +73,10 @@ const Blogs = () => {
             {/* <img id={styles.chand} src="/svg/moon.svg" alt="" /> */}
         </div>
 
-        {/* blogs */}
+        {/* blogs */} 
         <div className={styles.blogsContainer}>
-            <Blog theme={theme}/>
+            {/* <Blog data={datafinal} theme={theme}/> */}
+            <Blog theme={theme} data={maindata}/>
         </div>
     </div>
 

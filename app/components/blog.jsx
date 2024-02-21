@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from "./blog.module.scss"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 const blogData = [{
     heading: "The story of my weekend project - A complete dumpster ",
@@ -63,10 +63,18 @@ const blogData = [{
     date:"Jan 26 2023"
 }]
 
-const Blog = ({theme}) => {
+const Blog = ({theme, data}) => {
     
+    console.log(data)
+
+    useEffect(()=>{
+        if(data){
+            setDataFetch(true);
+        }
+    },[])
+
     // remove this useState and ternary operators when database connected
-    const [dataFetch, setDataFetch] = useState(true);
+    const [dataFetch, setDataFetch] = useState(false);
 
     return <>
    
@@ -88,9 +96,6 @@ const Blog = ({theme}) => {
         </React.Fragment>
     }) : <h1 id={styles.comingSoon}>Blogs are coming soon...</h1> }
     </> 
-
-
-
 }
 
-export default Blog;
+export default Blog; 
