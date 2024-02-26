@@ -16,12 +16,12 @@ const db = getFirestore(app);
 
 // Get a list of cities from your database
 async function getData(db) {
-  const citiesCol = collection(db, 'blogTitle');
-  const citySnapshot = await getDocs(citiesCol);
-  const cityList = citySnapshot.docs.map(doc => doc.data());
-  return cityList;
-}
-
+  const blogMain = collection(db, 'blog');
+  const blogSnapshot = await getDocs(blogMain);
+  const blogList = blogSnapshot.docs.map(doc => doc.data());
+  return blogList;
+}   
+  
 const Blogs = () => { 
     
     const [maindata, setMainData] = useState([]) 
@@ -41,7 +41,6 @@ const Blogs = () => {
     }
 
     return <>
-
     <div className={`${styles.container} ${theme == "Dark" ? styles.containerDark : styles.containerLight}`}>
         {/* navbar */}
         {/* <div className={styles.nav}> */}
@@ -59,10 +58,30 @@ const Blogs = () => {
                 <img id={styles.pfp} src="/img/pfp.jpg" alt="profile picture" />
             </div>
             <div className={`${styles.links} ${theme == "Dark" ? styles.navLinksDark : styles.navLinksLight}`}>
-                <a>All</a>
-                <a>Latest</a>
-                <a>Technical</a>
-                <a>this&that</a>
+                <div className={styles.inputContainer}>
+                    <input value="all" type="radio" name="radio" />
+                    <div className={`${theme == "Dark" ? styles.radioTileDark : styles.radioTileLight}`}>
+                        <label>All</label>
+                    </div>
+                </div>
+                <div className={styles.inputContainer}>
+                    <input type="radio" name="radio" value="latest"/>
+                    <div className={`${theme == "Dark" ? styles.radioTileDark : styles.radioTileLight}`}>
+                        <label>Latest</label>
+                    </div>
+                </div>
+                <div className={styles.inputContainer}>
+                    <input type="radio" name="radio" value="technical"/>
+                    <div className={`${theme == "Dark" ? styles.radioTileDark : styles.radioTileLight}`}>
+                        <label>Technical</label>
+                    </div>
+                </div>
+                <div className={styles.inputContainer}>
+                    <input type="radio" name="radio" value="this&that"/>
+                    <div className={`${theme == "Dark" ? styles.radioTileDark : styles.radioTileLight}`}>
+                        <label>this&that</label>
+                    </div>
+                </div>
             </div>
             <div onClick={changeTheme} className={`${theme == "Dark" ? styles.chandDark : styles.chandLight}`} id={styles.chand}>
                 <svg width="23" height="23" viewBox="0 0 23 23" xmlns="http://www.w3.org/2000/svg">
@@ -72,11 +91,12 @@ const Blogs = () => {
             </div>
             {/* <img id={styles.chand} src="/svg/moon.svg" alt="" /> */}
         </div>
-
         {/* blogs */} 
+        
         <div className={styles.blogsContainer}>
-            {/* <Blog data={datafinal} theme={theme}/> */}
-            <Blog theme={theme} data={maindata}/>
+
+
+            <Blog theme={theme} data={maindata} type={"All"}/>
         </div>
     </div>
 
