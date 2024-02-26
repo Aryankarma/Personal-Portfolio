@@ -2,73 +2,12 @@ import React from 'react'
 import styles from "./blog.module.scss"
 import { useState, useEffect } from "react"
 
-const blogData = [{
-    heading: "The story of my weekend project - A complete dumpster ",
-    subheading:"A story about how my Christmas was ruined by a series of spam, abuse and DDoS attacks on a small app that I built. And what you can learn from it.",
-    minuteRead: "3 min read",
-    date:"Jan 6 2023"
-},
-{
-    heading: "The story of my weekend project - A complete dumpster ",
-    subheading:"A story about how my Christmas was ruined by a series of spam, abuse and DDoS attacks on a small app that I built. And what you can learn from it.",
-    minuteRead: "3 min read",
-    date:"Jan 6 2023"
-},
-{
-    heading: "The story of my weekend project - A complete dumpster ",
-    subheading:"A story about how my Christmas was ruined by a series of spam, abuse and DDoS attacks on a small app that I built. And what you can learn from it.",
-    minuteRead: "3 min read",
-    date:"Jan 6 2023"
-},
-{
-    heading: "The story of my weekend project - A complete dumpster ",
-    subheading:"A story about how my Christmas was ruined by a series of spam, abuse and DDoS attacks on a small app that I built. And what you can learn from it.",
-    minuteRead: "3 min read",
-    date:"Jan 6 2023"
-},
-{
-    heading: "The story of my weekend project - A complete dumpster ",
-    subheading:"A story about how my Christmas was ruined by a series of spam, abuse and DDoS attacks on a small app that I built. And what you can learn from it.",
-    minuteRead: "3 min read",
-    date:"Jan 6 2023"
-},
-{
-    heading: "The story of my weekend project - A complete dumpster ",
-    subheading:"A story about how my Christmas was ruined by a series of spam, abuse and DDoS attacks on a small app that I built. And what you can learn from it.",
-    minuteRead: "3 min read",
-    date:"Jan 6 2023"
-},
-{
-    heading: "The story of my weekend project - A complete dumpster fire, and everything I learnt from it.",
-    subheading:"A story about how my Christmas was ruined by a series of spam, abuse and DDoS attacks on a small app that I built. And what you can learn from it.",
-    minuteRead: "3 min read",
-    date:"Jan 26 2023"
-},
-{
-    heading: "The story of my weekend project - A complete dumpster fire, and everything I learnt from it.",
-    subheading:"A story about how my Christmas was ruined by a series of spam, abuse and DDoS attacks on a small app that I built. And what you can learn from it.",
-    minuteRead: "3 min read",
-    date:"Jan 26 2023"
-},
-{
-    heading: "The story of my weekend project - A complete dumpster fire, and everything I learnt from it.",
-    subheading:"A story about how my Christmas was ruined by a series of spam, abuse and DDoS attacks on a small app that I built. And what you can learn from it.",
-    minuteRead: "3 min read",
-    date:"Jan 26 2023"
-},
-{
-    heading: "The story of my weekend project - A complete dumpster fire, and everything I learnt from it.",
-    subheading:"A story about how my Christmas was ruined by a series of spam, abuse and DDoS attacks on a small app that I built. And what you can learn from it.",
-    minuteRead: "3 min read",
-    date:"Jan 26 2023"
-}]
+const Blog = ({theme, data, type}) => {
 
-const Blog = ({theme, data}) => {
-    
-    console.log(data)
+    console.log(type)
 
     useEffect(()=>{
-        if(data){
+        if(data){ 
             setDataFetch(true);
         }
     },[])
@@ -78,23 +17,41 @@ const Blog = ({theme, data}) => {
 
     return <>
    
-    {dataFetch ? blogData.map((input, index)=>{        
+    {dataFetch ? data.map((input, index)=>{   
+
+        let subheading = input.content.slice(0, 220) + "..."
+        const actualDate = new Date(input.dateAndTime.seconds * 1000 + input.dateAndTime.nanoseconds / 1000000);
+      
+        let options = {
+            year: "numeric",
+            month: "short",
+            day: "numeric"
+        };
+
+        const formattedDate = actualDate.toLocaleDateString("en-US", options); // Adjust the format as needed
+        
+        const nummberOfWords = input.content.trim().split(/\s+/).length;
+        let minuteRead = nummberOfWords/100; // divided by avg reading speed
+        minuteRead = Math.round(minuteRead);
+        minuteRead = minuteRead + " min read"
+        
+
         return <React.Fragment key={index}>
             <div 
             className={`${theme == "Dark" ? styles.blogBoxDark : styles.blogBoxLight}`} 
             id={styles.blogBox}>
                 <div className={styles.headingsContainer}>
-                    <h2 className={styles.mainheading}>{input.heading}</h2>
-                    <p className={styles.subheading}>{input.subheading}</p>
+                    <h2 className={styles.mainheading}>{input.title}</h2>
+                    <p className={styles.subheading}>{subheading}</p>
                 </div>
                 <div className={styles.DateAndTimeContainer}>
-                    <p className={`${styles.minuteRead} ${theme == "Dark" ? styles.minuteReadDark : styles.minuteReadLight}`}><span className={styles.removeDesktop}>• </span> {input.minuteRead}</p>
-                    <p className={`${styles.date} ${theme == "Dark" ? styles.dateDark : styles.dateLight}`}> {input.date}</p>
+                    <p className={`${styles.minuteRead} ${theme == "Dark" ? styles.minuteReadDark : styles.minuteReadLight}`}><span className={styles.removeDesktop}>• </span> {minuteRead}</p>
+                    <p className={`${styles.date} ${theme == "Dark" ? styles.dateDark : styles.dateLight}`}> {formattedDate}</p>
                 </div>
             </div>
             <hr className={`${styles.hr} ${theme == "Dark" ? styles.hrDark : styles.hrLight}`}/>
         </React.Fragment>
-    }) : <h1 id={styles.comingSoon}>Blogs are coming soon...</h1> }
+    }) : <h1 id={styles.comingSoon}>No blogs here :)</h1> }
     </> 
 }
 
