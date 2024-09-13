@@ -14,7 +14,7 @@ import { useState, useEffect } from "react"
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-// Get a list of cities from your database
+// Get a list of cities from your database 
 async function getData(db) {
   const blogMain = collection(db, 'blog');
   const blogSnapshot = await getDocs(blogMain);

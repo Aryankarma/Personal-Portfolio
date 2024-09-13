@@ -8,7 +8,47 @@ import 'slick-carousel/slick/slick-theme.css';
 import React, {useState, useEffect} from 'react'
 import Link from "next/link"
 
+// firebase setup
+import { initializeApp } from 'firebase/app';
+import { getFirestore, doc,  getDoc } from 'firebase/firestore/lite';
+import firebaseConfig from "./config/firebase"
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+
 function App() {
+
+  const [portfolioData, setPortfolioData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  // fetching portfolio (main) data
+  useEffect(() => {
+    const fetchData = async () => {
+
+      try {
+        const docRef = doc(db, 'portfolio', 'main');
+        const docSnap = await getDoc(docRef);
+
+        if (docSnap.exists()) {
+          setPortfolioData(docSnap.data());
+        } else {
+          console.log('No such document!');
+        }
+      } catch (err) {
+        setError(err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []); 
+
+  useEffect(()=>{
+    console.log(portfolioData)
+  },[portfolioData])
 
   const settings = {
     dots: false,
@@ -220,7 +260,6 @@ useEffect(()=>{
 
 // circle following the cursor
 useEffect(()=>{
-  // console.clear();
 
   const circleElement = document.querySelector('#circlecursor');
 
@@ -376,70 +415,60 @@ useEffect(()=>{
             <div className="tooltip">
               <div className="tooltipcorner"></div>
               ReactJS
-              {/* Aryan has a strong command on react with 1+ years practice on DSA solutions. */}
             </div>
             <img style={{width:"45px", height:"45px",}}  src="/img/react.png" alt="" /></div>
           <div style={{borderColor:"#172027"}} className={`skillcircle ${theme == "Dark" ? "" : styles.CppLight}`}>
             <div className="tooltip">    
               <div className="tooltipcorner"></div>            
               C++
-              {/* Aryan has a strong command on c++ with 1+ years practice on DSA solutions. */}
             </div>
             <img style={{width:"40px", height:"45px",}} src="/img/c++.png" alt="" /></div>
           <div style={{borderColor:"#222820"}} className={`skillcircle ${theme == "Dark" ? "" : styles.NodeJSLight}`}>
             <div className="tooltip">    
               <div className="tooltipcorner"></div>            
               NodeJS
-              {/* Aryan has a strong command on nodejs with 1+ years practice on DSA solutions. */}
             </div>
             <img style={{width:"45px", height:"45px", }} src="/img/nodejs.png" alt="" /></div>
           <div style={{borderColor:"#313131"}} className={`skillcircle ${theme == "Dark" ? "" : styles.ExpressJSLight}`}>
             <div className="tooltip">    
               <div className="tooltipcorner"></div>            
               ExpressJS
-              {/* Aryan has a strong command on expressjs with 1+ years practice on DSA solutions. */}
             </div>
             <img style={{width:"45px", height:"45px", }} src="/img/expressjs.png" alt="" /></div>
           <div style={{borderColor:"#313131"}} className={`skillcircle ${theme == "Dark" ? "" : styles.NextJSLight}`}>
             <div className="tooltip">    
               <div className="tooltipcorner"></div>            
               NextJS
-              {/* Aryan has a strong command on nextjs with 1+ years practice on DSA solutions. */}
             </div>
             <img style={{width:"45px", height:"45px", }} src="/img/nextjs.png" alt="" /></div>
           <div style={{borderColor:"#252E43"}} className={`skillcircle ${theme == "Dark" ? "" : styles.HtmlLight}`}>
             <div className="tooltip">    
               <div className="tooltipcorner"></div>            
               HTML/CSS
-              {/* Aryan has a strong command on htmlcss with 1+ years practice on DSA solutions. */}
             </div>
             <img style={{width:"45px", height:"35px", }} src="/img/htmlcss.jpg" alt="" /></div>
           <div style={{borderColor:"#352B30"}} className={`skillcircle ${theme == "Dark" ? "" : styles.SassLight}`}>
             <div className="tooltip">    
               <div className="tooltipcorner"></div>            
               SASS
-              {/* Aryan has a strong command on sass with 1+ years practice on DSA solutions. */}
             </div>
             <img style={{width:"45px", height:"30px", scale:".9"}} src="/img/sass.jpg" alt="" /></div>
           <div style={{borderColor:"#3B2C2B"}} className={`skillcircle ${theme == "Dark" ? "" : styles.FigmaLight}`}>
             <div className="tooltip">    
               <div className="tooltipcorner"></div>            
               Figma
-              {/* Aryan has a strong command on figma with 1+ years practice on DSA solutions. */}
             </div>
             <img style={{width:"28.5px", height:"42.5px", padding:"0 7.5px", scale:".9"}}  src="/img/figma.jpg" alt="" /></div>
           <div style={{borderColor:"#3A3627"}} className={`skillcircle ${theme == "Dark" ? "" : styles.JavaScriptLight}`}>
             <div className="tooltip">    
               <div className="tooltipcorner"></div>            
               JavaScript
-              {/* Aryan has a strong command on javascript with 1+ years practice on DSA solutions. */}
             </div>
             <img style={{width:"40px", height:"45px", padding:"0px 5px",  scale:".9"}}  src="/img/javascript.jpg" alt="" /></div>
           <div style={{borderColor:"#21392B"}} className={`skillcircle ${theme == "Dark" ? "" : styles.MongodbLight}`}>
             <div className="tooltip">    
               <div className="tooltipcorner"></div>            
               MongoDB
-              {/* Aryan has a strong command on mongodb with 1+ years practice on DSA solutions. */}
             </div>
             <img style={{width:"45px", height:"45px"}}  src="/img/mongodb.png" alt="" /></div>
         </div>
