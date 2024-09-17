@@ -11,7 +11,7 @@
   "dependencies": {
     "@vercel/analytics": "^1.1.2",
     "@vercel/speed-insights": "^1.0.8",
-    "next": "^14.0.4",
+    "next": "^14.2.12",
     "next-google-fonts": "^2.2.0",
     "nextjs-google-fonts": "^3.4.0",
     "react": "^18.2.0",
