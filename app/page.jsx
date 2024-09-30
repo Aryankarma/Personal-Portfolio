@@ -21,6 +21,9 @@ function App() {
   const [portfolioData, setPortfolioData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  // change theme
+  const [theme, setTheme] = useState("Dark");
+
 
   // fetching portfolio (main) data
   useEffect(() => {
@@ -45,8 +48,8 @@ function App() {
   }, []);
 
   useEffect(() => {
-    console.log("portfolioData: ", portfolioData);
-  }, [portfolioData]);
+    console.log("theme: ", theme);
+  }, [theme]);
 
   const settings = {
     dots: false,
@@ -323,9 +326,6 @@ function App() {
     tick();
   }, []);
 
-  // change theme
-  const [theme, setTheme] = useState("Dark");
-
   const changeTheme = () => {
     setTheme(theme == "Dark" ? "Light" : "Dark");
     if (theme) {
@@ -469,8 +469,8 @@ function App() {
                 <div
                   key={index}
                   style={{ borderColor: skill.borderColor }}
-                  className={`skillcircle ${
-                    theme === "Dark" ? "" : skill.lightStyle
+                  className={`${`skillcircle`} ${
+                    theme === "Dark" ? "" : styles[skill.lightStyle]
                   }`}
                 >
                   <div className="tooltip">
