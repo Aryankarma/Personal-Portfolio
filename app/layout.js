@@ -1,41 +1,34 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Head from "next/head";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { NextSeo } from "next-seo";
 
-const inter = Inter({ subsets: ["latin"] });
-
 export const metadata = {
-  title: "Aryan Karna",
+  title: "Aryan Karna - Web Developer from Indore",
   description:
     "Web developer Aryan Karna specializes in building modern web applications. Based in Indore, graduate from Sage University.",
+  openGraph: {
+    url: "https://aryankarma.vercel.app",
+    title: "Aryan Karna - Web Developer",
+    description: "Web developer based in Indore.",
+    images: [{ url: "/img/pfp.jpg" }],
+    site_name: "Aryan Karna Portfolio",
+  },
+  twitter: {
+    handle: "@karmaaryan",
+    site: "@karmaaryan",
+    cardType: "summary_large_image",
+  },
 };
+
+const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({ children }) {
   return (
-    <>
-      <NextSeo
-        title="Aryan Karna - Web Developer from Indore"
-        description="Aryan Karna specializes in building modern web applications. Based in Indore, Sage University graduate."
-        canonical="https://aryankarma.vercel.app"
-        openGraph={{
-          url: "https://aryankarma.vercel.app",
-          title: "Aryan Karna - Web Developer",
-          description: "Web developer based in Indore.",
-          images: [{ url: "/img/pfp.jpg" }],
-          site_name: "Aryan Karna Portfolio",
-        }}
-        twitter={{
-          handle: "@karmaaryan",
-          site: "@karmaaryan", // This should match your Twitter account
-          cardType: "summary_large_image",
-        }}
-      />
-
-      <Head>
-        {/* Script for SEO schema */}
+    <html lang="en">
+      <body className={inter.className}>
+        {/* Schema Markup for better seo */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -51,7 +44,7 @@ export default function RootLayout({ children }) {
               url: "https://aryankarma.vercel.app",
               sameAs: [
                 "https://linkedin.com/in/aryankarma",
-                "https://twitter.com/aryankarma",
+                "https://twitter.com/karmaaryan",
                 "https://github.com/Aryankarma",
                 "https://bento.me/Aryankarma",
               ],
@@ -68,18 +61,13 @@ export default function RootLayout({ children }) {
         />
         {/* Additional meta tags */}
         <meta charSet="UTF-8" />
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1.0"
-        />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="/img/pfp.jpg" />
-      </Head>
-
-      <body className={inter.className}>
+        
         {children}
         <Analytics />
         <SpeedInsights />
       </body>
-    </>
+    </html>
   );
 }
